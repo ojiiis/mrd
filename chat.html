@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="">
+    <style>
+        .chat{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .chat-head,.chat-footer{
+          height: 10%;
+          width: 100%;
+          position: fixed;
+        }
+        .chat-head{
+            background: #fff;
+            top:0;
+            left:0;
+        }
+        .chat-footer{
+            background: #fff;
+            bottom:0;
+            left:0;
+           
+        }
+        .chat-body{
+            height: 90%;
+            background: red;
+            background-image: url("res/img/cbg.jpg");
+            background-position: center;
+            background-size: cover;
+            margin-top: 20%;
+            overflow-y: auto;
+        }
+       .chat-actions{
+          width: 85%;
+          display: flex;
+          align-items: center;
+          justify-content: spa;
+          position: relative;
+       }
+       .chat-actions input{
+         width: 100%;
+          position: absolute;
+         padding:10px;
+         margin-left: 5px;
+       }
+       .chat-actions span{
+          width: 100%;
+          position: absolute;
+          z-index: 4;
+          
+       }
+       .emoji{
+        left: 4%;
+       }
+       .file{
+        left:96%;
+       }
+       .chat-send{
+          width: 15%;
+       }
+       .left{
+        float:left;
+       }
+       .right{
+        float:right;
+       }
+       .clear{
+        clear:both;
+       }
+    </style>
+    <div class="chat">
+        <div class="chat-head"></div>
+        <div class="chat-body"><h1>Hey</h1></div>
+        <div class="flex chat-footer sb">
+            <div class="chat-actions">
+                <span class="emoji">Emoji</span>
+                <input type="">
+                <span class="file">File</span>
+            </div class="chat-send">
+            <div>Send</div>
+        </div>
+    </div>
+    <script src="loader.js"></script>
+    <script>
+      const app = oLoader();
+       app.head("./global/head.html");
+      
+       app.script("./script.js");
+       app.load(()=>{
+      document.body.put('./global/dragable.html');
+       });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<style>
+    #dragElement {
+        width: 50px;
+        height: 50px;
+        background-image:url("../res/img/butterfly.png");
+        background-position: center;
+        background-size: contain;
+        color: white;
+        text-align: center;
+        line-height: 150px;
+        position: absolute;
+        cursor: grab;
+        border-radius: 10px;
+        position:fixed;
+        bottom:50px;
+        right:50px;
+    }
+</style>
+
+<div id="dragElement"></div>
+<script>
+let offsetX, offsetY, isDragging = false;
+const dragElement = document.getElementById("dragElement");
+
+
+dragElement.addEventListener("mousedown", startDrag);
+dragElement.addEventListener("mousemove", drag);
+dragElement.addEventListener("mouseup", stopDrag);
+
+// Handle Touch Events
+dragElement.addEventListener("touchstart", startDrag);
+dragElement.addEventListener("touchmove", drag);
+dragElement.addEventListener("touchend", stopDrag);
+
+function startDrag(e) {
+    isDragging = true;
+    let clientX = e.clientX || e.touches[0].clientX;
+    let clientY = e.clientY || e.touches[0].clientY;
+    offsetX = clientX - dragElement.offsetLeft;
+    offsetY = clientY - dragElement.offsetTop;
+    dragElement.style.cursor = "grabbing";
+}
+
+function drag(e) {
+    if (!isDragging) return;
+    let clientX = e.clientX || e.touches[0].clientX;
+    let clientY = e.clientY || e.touches[0].clientY;
+    dragElement.style.left = clientX - offsetX + "px";
+    dragElement.style.top = clientY - offsetY + "px";
+}
+
+function stopDrag() {
+    isDragging = false;
+    dragElement.style.cursor = "grab";
+}
+
+
+
+</script>

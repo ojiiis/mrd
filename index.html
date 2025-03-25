@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="res/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+           <a class="chats flex" href="chat.html">
+                <div class="chats-avi"></div>
+                <div class="chats-contents">
+                    <div class="flex chats-name-time sb">
+                        <div>Contactor 1</div> <div>11:05 pm</div>
+                    </div>
+                    <div class="flex chats-message-unread sb">
+                        <div>Message sent by the contactor...</div> <div>3</div>
+                    </div>
+                </div>
+           </a>
+           <a class="chats flex" href="chat.html">
+                <div class="chats-avi"></div>
+                <div class="chats-contents">
+                    <div class="flex chats-name-time sb">
+                        <div>Contactor 1</div> <div>11:05 pm</div>
+                    </div>
+                    <div class="flex chats-message-unread sb">
+                        <div>Message sent by the contactor...</div> <div>3</div>
+                    </div>
+                </div>
+        </a>
+        <a class="chats flex" href="chat.html">
+                <div class="chats-avi"></div>
+                <div class="chats-contents">
+                    <div class="flex chats-name-time sb">
+                        <div>Contactor 1</div> <div>11:05 pm</div>
+                    </div>
+                    <div class="flex chats-message-unread sb">
+                        <div>Message sent by the contactor...</div> <div>3</div>
+                    </div>
+                </div>
+           </a>
+      
+    <!-- <script src="https://ojiiis.github.io/oLoader?v=1"></script> -->
+   
+    <script src="loader.js"></script>
+    <script>
+      const app = oLoader();
+       app.head("./global/head.html");
+       app.body("./global/header.html","b");
+       app.body("./global/footer.html","e");
+       app.script("./script.js");
+       app.load(()=>{
+      document.body.put('./global/dragable.html');
+       });
+    </script>
+</body>
+</html>
