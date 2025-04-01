@@ -8,11 +8,7 @@ a{
 }
 #app{
     padding:4%;
-<<<<<<< HEAD
-    height: 100vh;
-=======
     height: 100%;
->>>>>>> cc1a1a1 (merge)
 }
 #head,#footer{
     height: 9%;
