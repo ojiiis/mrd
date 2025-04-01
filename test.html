@@ -1,0 +1,14 @@
+<div id="peep-chat-list"></div>
+
+<script>
+    fetch("https://lin.com.ng/mailin/live-messages",{
+        method:"POST",
+        headers:{
+            token:window.localStorage.getItem("token")
+        }
+    }).then((r)=>{
+        console.log(r)
+    }).catch((r)=>{
+        console.log(r)
+    })
+</script>

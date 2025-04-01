@@ -1,0 +1,40 @@
+<html>
+    <head>
+     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+      <link rel="stylesheet" href="assets/css/form-style.css">
+    </head>
+    <body>
+        <div id="auth-simple">
+            <div id="auth-simple-inner">
+                <div id="auth-simple-content">
+                    <h1 class="center-text">Sign In</h1>
+                    <form route="sign_in" redirect="index.html">
+                        
+                        <div class="fg">
+                            <span class="fl">Enter your  email address</span>
+                            <input class="fi" type="email" name="email">
+                        </div>
+                        
+                        <div class="fg">
+                            <span class="fl">Enter your password</span>
+                           <div class="dbi">
+                            <input class="fi" type="password" name="password">
+                            <i class="hp">V</i>
+                           </div>
+                          <a href="verify-email.html">Reset password</a>
+                        </div>
+                        
+                    <div class="fg">
+                            <button class="btn" type="submit">Sign in</button>
+                    </div>
+                   Don't have an account? <a href="sign-up.html">Sign up here</a>
+                    </form>
+                 
+                </div>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/form-entry.js"></script>
+       <script src="assets/js/auth.js"></script>
+    </body>
+</html>

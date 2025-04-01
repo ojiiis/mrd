@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="res/css/style.css">
@@ -46,6 +47,22 @@
     <!-- <script src="https://ojiiis.github.io/oLoader?v=1"></script> -->
    
     <script src="loader.js"></script>
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="res/css/style.css">
+      <link rel="stylesheet" href="assets/css/chat.css">
+    <title>Document</title>
+</head>
+<body>
+  
+ 
+      
+     <!--script src="https://ojiiis.github.io/oLoader?v=1"></script --> 
+        <script src="loader.js"></script>
+   <script src="assets/js/auth.js"></script>
+   <script src="assets/js/chat.js"></script>
+>>>>>>> cc1a1a1 (merge)
     <script>
       const app = oLoader();
        app.head("./global/head.html");
@@ -53,8 +70,26 @@
        app.body("./global/footer.html","e");
        app.script("./script.js");
        app.load(()=>{
+<<<<<<< HEAD
       document.body.put('./global/dragable.html');
        });
+=======
+           isAuth().then(r=>{
+  if(!r){  
+ 
+ document.getElementsByTagName("head")[0].put(` <link rel="stylesheet" href="assets/css/form-style.css">`);
+ document.getElementById("body").put("./sign-in.html");
+  }else{
+      document.getElementById("body").put(` <div id="peep-chat-list"></div>`);
+     // document.getElementById("peep-chat-list").style.background ='orange';
+
+      document.body.put(`./global/dragable.html`);
+       
+  }
+});
+       });
+      
+>>>>>>> cc1a1a1 (merge)
     </script>
 </body>
 </html>

@@ -1,0 +1,70 @@
+    /*
+    ONC8MLL3*rSc
+    
+    
+    User “doksummz_mailin” was added to the database “doksummz_mailin”.
+    */ 
+     
+        body{
+             margin:0;
+         }
+          #auth-simple{
+              width: 100vw;
+              height: 100vh;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+          #auth-simple-inner{
+              min-height: 100px;
+              max-height: 100%;
+              overflow-y: auto;
+              
+          }
+          #auth-simple-content{
+              padding: 0 20px;
+          }
+          .center-text{
+              text-align: center;
+          }
+          .btn{
+              padding:6px 0;
+              width:100%;
+          }
+          
+          .fg{
+              margin-bottom: 20px;
+          }
+          .fl{
+              display: block;
+              margin-bottom: 5px;
+              
+          }
+          .fi{
+              display: block;
+              width: 100%;
+              padding:5px 20px;
+              outline:0;
+              position: relative;
+              //border:none;
+          }
+          .dbi{
+              position: relative;
+          }
+        .dbi i{
+            position: absolute;
+            right: 20px;
+            top:50%;
+            transform: translate(0,-50%);
+        }
+        
+        .fg.otp{
+            display:flex;
+            justify-content: space-between;
+        }
+           .fg.otp input{
+               width: 50px;
+               padding:5px;
+               text-align: center;
+           }
+           

@@ -1,0 +1,393 @@
+
+ #chat-list {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+
+ }
+
+ #peeps-online {
+     margin-top:97%;
+     height: 99%;
+     display: flex;
+     background: orange;
+    // background: #f7f7f7;
+
+ }
+
+ #peeps-online a {
+     text-decoration: none;
+     height: 30px;
+     padding: 1px 15px;
+     background: #303030;
+     color: #f7f7f7;
+     border: none;
+     outline: 0;
+     border-radius: 10px;
+     display: flex;
+     align-items: center;
+     margin-top: 10px;
+
+ }
+
+ #peeps-online #inner {
+     width: 80%;
+     height: 100%;
+     display: flex;
+     flex-wrap: no-wrap;
+     align-items: center;
+     overflow-x: auto;
+     overflow-x: auto;
+ }
+
+ #peeps-online #inner .peeps {
+     width: 45px;
+     height: 45px;
+     background: green;
+     border-radius: 50%;
+     flex-shrink: 0;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     margin-right: 10px;
+     position: relative;
+ }
+
+
+ #peeps-online #inner .peeps.active {
+     border: 1.5px solid #90EE90;
+ }
+
+ #peeps-online #inner .peeps.status:before {
+     content: "";
+     display: block;
+     position: absolute;
+     top: 2.5px;
+     right: 2.5px;
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     background: #90EE90;
+ }
+
+ #peeps-online #inner .peeps.away:before {
+     content: "";
+     display: block;
+     position: absolute;
+     top: 2.5px;
+     right: 2.5px;
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     background: #303030;
+ }
+
+ #peeps-online #inner .peeps.offline:before {
+     content: "";
+     display: block;
+     position: absolute;
+     top: 2.5px;
+     right: 2.5px;
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     background: #ddd;
+ }
+
+ #search-peep {
+     border: none;
+     outline: 0;
+     background: none;
+     width: 100%;
+
+ }
+
+ #sp {
+     height: 3%;
+ }
+
+ #peep-chat-list {
+     height: 99%;
+     width:109%;
+     background: transparent;
+     overflow-y: auto;
+     scroll-behavior: smooth;
+ }
+
+ .pc-lister {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px;
+     text-decoration: none;
+     color: #303030;
+ }
+
+ .pc-lister .avi {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     background: orange;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+ }
+
+ .pc-lister .details {
+     width: 80%;
+
+ }
+
+ .pc-lister .details .top,
+ .pc-lister .details .bottom {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     height: 30px;
+
+ }
+
+ .pc-lister .details .top h2,
+ .pc-lister .details .bottom p {
+     max-width: 85%;
+ }
+
+ .pc-lister .details .top h2 {
+     font-size: 1.1rem;
+ }
+
+ .pc-lister .details .bottom p {
+     font-size: .85rem;
+
+ }
+
+ .pc-lister .details .bottom span {
+     display: block;
+     min-width: 25px;
+     height: 25px;
+     background: none;
+     border-radius: 25px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+
+ }
+
+ .pc-lister .details .bottom span i {
+     padding: 5px;
+     width: 100%;
+     height: 100%;
+     background: #90EE90;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: .8rem;
+ }
+
+ .chat-board {
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     left: 100%;
+     top: 0;
+     background: #f7f7f7;
+     display: none;
+     z-index: 10;
+
+ }
+
+ @keyframes cbi {
+     from {
+
+         left: 100%;
+         display: none;
+         position: fixed;
+
+     }
+
+     to {
+
+         left: 0%;
+         display: block;
+         position: absolute;
+     }
+ }
+
+ @keyframes cbo {
+     from {
+         left: 0%;
+         display: block;
+         position: absolute;
+
+
+
+     }
+
+     to {
+         left: 100%;
+         display: none;
+         position: fixed;
+
+     }
+ }
+
+ @keyframes ls {
+     from {
+         left: 0%;
+
+     }
+
+     to {
+         left: -30%;
+     }
+ }
+
+ @keyframes lso {
+     from {
+
+         left: -30%;
+     }
+
+     to {
+         left: 0%;
+     }
+ }
+
+ .chat-board {
+     position: relative;
+ }
+
+ .cb-header {
+     padding: 10px;
+
+     height: 7%;
+     display: flex;
+     align-items: center;
+     background: pink;
+     position: sticky;
+     left: 0;
+     top: 0;
+     z-index: 10;
+ }
+
+ .cb-header button {
+     padding: 2px 15px;
+     background: #303030;
+     color: #f7f7f7;
+     border: none;
+     outline: 0;
+     border-radius: 10px;
+     margin-right: 10px;
+ }
+
+ .cb-header div {
+     width: 40px;
+     height: 40px;
+     background: green;
+     border-radius: 50%;
+     margin-right: 10px;
+ }
+
+ .messsges {
+     margin-top: 0%;
+     padding: 0 10px;
+     height: 80%;
+     background: url('../../images/chatgb.webp');
+     overflow-y: auto;
+     position: relative;
+    z-index: 1;
+ }
+  .messsges::after {
+    content:"";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+    left:0;
+    top:0;
+    z-index: -1;
+    opacity: .8;
+  }
+
+ .input {
+     height: 10%;
+     padding: 0 10px;
+     position: sticky;
+     bottom: 0;
+     left: 0;
+     background: pink;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     z-index: 10;
+ }
+
+ .input input {
+     padding: 3%;
+     width: 77%;
+     border-radius: 15px;
+     outline: 0;
+     border: none;
+     margin-right: 3%;
+ }
+
+ .input button {
+     padding: 3% 7%;
+
+     border-radius: 15px;
+     outline: 0;
+     border: none;
+     background: #303030;
+     color: #f7f7f7;
+ }
+
+ .clear {
+
+     clear: both;
+ }
+
+ .msg-card {
+     position: relative;
+     margin-bottom: 5px;
+ }
+
+ .msg-card p {
+     padding: 10px;
+     background:#ddd ;
+     border-radius: 0 10px 10px 10px;
+     float: right;
+ }
+
+ .msg-card span {
+
+     display: block;
+     margin-top: -10px;
+     position: absolute;
+    right: 0;
+    font-size: 12px;
+ }
+
+ .msg-card.other p {
+
+     float: left;
+     background:pink ;
+     border-radius: 10px 0 10px 10px;
+ }
+
+ .msg-card.other span {
+    right: auto;
+    left: 0;
+ }
+
+ .center-msg {
+     padding: 5;
+     text-align: center;
+     color: #f7f7f7;
+     background: lightgreen;
+     margin: 10px 0;
+     border-radius: 5px;
+ }
