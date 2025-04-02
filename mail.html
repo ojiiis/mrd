@@ -2,10 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="res/css/style.css">
+      <link rel="stylesheet" href="assets/css/chat.css">
     <title>Document</title>
+    <script src="loader.js"></script>
 </head>
 <body>
     <h1>Mails page</h1>
+
+      <!--script src="https://ojiiis.github.io/oLoader?v=1"></script --> 
+    
+      <script src="assets/js/auth.js"></script>
+      <script>
+              const app = oLoader();
+       app.head("./global/head.html");
+       app.body("./global/header.html","b");
+       app.body("./global/footer.html","e");
+       app.script("./script.js");
+       app.load();
+      </script>
 </body>
 </html>

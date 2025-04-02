@@ -109,7 +109,7 @@
  }
 
  #peep-chat-list {
-     height: 90vh;
+     height: 100%;
      width:90vw;
      background: transparent;
      overflow-y: auto;

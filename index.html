@@ -20,6 +20,40 @@
 
    
    <script>
+    function show_search(){
+        const chatdiv = `
+        <div style="width:100%;height:100vh;background:#fff;position:fixed;top:0;left:0" id="search_div">
+          <div class="dbi" style="height:40px;display:flex;justify-content:space-between;align-items:center;padding:20px">
+             <input type="search" onkeyup="searching_user(this)" id="" placeholder="search user" style="padding:5px">
+             <div onclick="close_search_chat()">Close</div>
+          </div>
+          <div style="height:calc(100% - 40px)" id="rs">
+            
+          </div>
+        </div>
+        `;
+        document.body.insertAdjacentHTML('afterBegin',chatdiv);
+    }
+  function close_search_chat(){
+    document.getElementById("search_div").remove();
+  }
+async function searching_user(elem){
+    const req = await fetch("https://lin.com.ng/mailin/search/"+elem.value,{
+      method:"POST",
+      headers:{
+        token:window.localStorage.getItem("token")
+      }
+    });
+    const res = await req.json();
+    if(res.status){
+        let j = '';
+        for(let i = 0; i < res.length;i++){
+              j+= `<div class="search-peeps" style="padding:10px 20px">${res.data[i].fullname}</div>`;
+        }
+        document.getElementById("rs").innerHTML = j;   
+    }
+  }
+
   function  signup(){
     if(document.getElementsByClassName("auth1")[0]){
         document.getElementsByClassName("auth1")[0].remove();   
@@ -58,8 +92,14 @@
      //document.getElementById("peep-chat-list").style.background ='orange';
      
       document.body.put(`./global/dragable.html`);
-       
+           
+      
+
+      
   }
+  document.getElementById("show_chat_search").onclick = function(){
+    alert("hey");
+}
 });
        });
       
