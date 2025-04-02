@@ -2,17 +2,21 @@ var hp = document.getElementsByClassName("hp");
        for(let i = 0; i < hp.length; i++){
            hp[i].onclick = function (){
              if(this.parentElement.children[0].type == "password"){
-                 this.parentElement.children[0].type = 'text';
-                 this.textContent = "H"
+              hp[i].classList.remove('fa-eye');
+              hp[i].classList.add('fa-eye-slash');
+              hp[i].parentElement.children[0].type = 'text';
+                
              }else{
-                 this.parentElement.children[0].type = 'password';
-                 this.textContent = "V"
+              hp[i].classList.add('fa-eye');
+              hp[i].classList.remove('fa-eye-slash');
+              hp[i].parentElement.children[0].type = 'password';
+                
              }
            }
        }
        
        
- const form = document.getElementsByTagName("form");
+ var form = document.getElementsByTagName("form");
 for(i = 0; i < form.length; i++){
   form[i].onsubmit = async function(e){
    e.preventDefault();

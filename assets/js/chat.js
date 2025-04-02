@@ -37,7 +37,7 @@
 
              document.getElementById("app").innerHTML = cboard + document.getElementById("app").innerHTML;
          }else{
-              document.getElementById("peep-chat-list").innerHTML =   document.getElementById("peep-chat-list").innerHTML + list;
+            document.getElementById("peep-chat-list").innerHTML =   document.getElementById("peep-chat-list").innerHTML + list;
 
              document.getElementById("app").innerHTML =   document.getElementById("app").innerHTML + cboard;
          }
@@ -237,7 +237,7 @@
                 document.getElementById(d.getAttribute("data-id")).style.display = "block";
                 document.getElementById("center-"+d.getAttribute("data-id")).scrollIntoView();   
                 document.getElementById(d.getAttribute("data-id")).style.animation = "cbi 0.5s forwards";
-                document.getElementById("chat-list").style.animation = "ls 0.4s forwards";
+                document.getElementById("peep-chat-list").style.animation = "ls 0.4s forwards";
                 localStorage.setItem("opened-chat",d.getAttribute("data-id"));
                 
      
@@ -264,7 +264,7 @@
             function close_cboard(i){
                  
                    i.parentElement.parentElement.style.animation = "cbo 0.5s forwards"
-                   document.getElementById("chat-list").style.animation = "lso 0.4s forwards";
+                   document.getElementById("peep-chat-list").style.animation = "lso 0.4s forwards";
                  localStorage.setItem("opened-chat","");
                    if(document.getElementById(`center-${i.getAttribute("data-id")}`)){
                 document.getElementById(`center-${i.getAttribute("data-id")}`).innerHTML = ''; 
@@ -276,7 +276,7 @@
               
              if(localStorage.getItem("opened-chat") == null || localStorage.getItem("opened-chat") == ""){
                  
-                  /*   uiR("https://lin.com.ng/mailin/live-messages", "POST", {
+                     uiR("https://lin.com.ng/mailin/live-messages", "POST", {
                          "listSize": localStorage.getItem('list-size'),
                          "listAt": localStorage.getItem('list-at')
                      }).then(res=>{
@@ -305,10 +305,10 @@
                      }).catch((er)=>{
                          console.log(er);
                      });
-                   */
+                   
             }else{
                 let opened = localStorage.getItem("opened-chat");
-             /*   uiR("https://lin.com.ng/mailin/new-messages","POST",{
+               uiR("https://lin.com.ng/mailin/new-messages","POST",{
                     "cid":opened
                 }).then(data=>{
                     if(data.status == 1){
@@ -327,7 +327,7 @@
            listen();
                 }); 
                 
-                */
+                
             }
          }
          

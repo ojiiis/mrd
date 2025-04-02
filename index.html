@@ -10,12 +10,29 @@
 </head>
 <body>
   
- 
+    
       
      <!--script src="https://ojiiis.github.io/oLoader?v=1"></script --> 
         <script src="loader.js"></script>
    <script src="assets/js/auth.js"></script>
    <script src="assets/js/chat.js"></script>
+   
+
+   
+   <script>
+  function  signup(){
+    if(document.getElementsByClassName("auth1")[0]){
+        document.getElementsByClassName("auth1")[0].remove();   
+      }
+  document.getElementById("body").put("./sign-up.html");
+  }
+  function  signin(){
+    if(document.getElementsByClassName("auth2")[0]){
+        document.getElementsByClassName("auth2")[0].remove();   
+      }
+  document.getElementById("body").put("./sign-in.html");
+  }
+   </script>
     <script>
       const app = oLoader();
        app.head("./global/head.html");
@@ -28,10 +45,18 @@
  
  document.getElementsByTagName("head")[0].put(` <link rel="stylesheet" href="assets/css/form-style.css">`);
  document.getElementById("body").put("./sign-in.html");
+ if(document.getElementById("su")){
+ }else  if(document.getElementById("si")){
+
+  document.getElementById("si").onclick = function(){
+  document.getElementsByClassName("auth2")[0].remove();
+  document.getElementById("body").put("./sign-in.html");
+     }
+ }
   }else{
       document.getElementById("body").put(` <div id="peep-chat-list"></div>`);
-     // document.getElementById("peep-chat-list").style.background ='orange';
-
+     //document.getElementById("peep-chat-list").style.background ='orange';
+     
       document.body.put(`./global/dragable.html`);
        
   }

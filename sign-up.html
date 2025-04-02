@@ -1,14 +1,9 @@
-<html>
-    <head>
-      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-      <link rel="stylesheet" href="assets/css/form-style.css">
-    </head>
-    <body>
-        <div id="auth-simple">
+
+        <div id="auth-simple" class="auth2">
             <div id="auth-simple-inner">
                 <div id="auth-simple-content">
                     <h1 class="center-text">Sign up</h1>
-                    <form route="sign_up" redirect="sign-in.html">
+                    <form route="sign_up" redirect="index.html">
                              <div class="fg">
                             <span class="fl">Enter your  fullname </span>
                             <input class="fi" type="text" name="fullname">
@@ -22,7 +17,7 @@
                             <span class="fl">Enter your password</span>
                            <div class="dbi">
                             <input class="fi" type="password" name="password">
-                            <i class="hp">V</i>
+                            <i class="hp fa fa-eye"></i>
                            </div>
                         </div>
                          
@@ -30,7 +25,7 @@
                             <span class="fl">Confirm your password</span>
                            <div class="dbi">
                             <input class="fi" type="password" name="confirm_password">
-                            <i class="hp">V</i>
+                            <i class="hp fa fa-eye"></i>
                            </div>
                         </div>
                           
@@ -40,7 +35,7 @@
                             <button class="btn">Sign up</button>
     
                     </div>
-                    Already have an account? <a href="sign-in.html">Sign in here</a>
+                    Already have an account? <a onclick="signin()" href="javascript:void(0)">Sign in here</a>
                     </form>
                  
                 </div>
@@ -48,6 +43,4 @@
         </div>
        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
     <script src="assets/js/form-entry.js"></script>
-       <script src="assets/js/auth.js"></script>
-    </body>
-</html>
+  

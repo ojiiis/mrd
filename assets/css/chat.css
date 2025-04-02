@@ -109,11 +109,12 @@
  }
 
  #peep-chat-list {
-     height: 99%;
-     width:109%;
+     height: 90vh;
+     width:90vw;
      background: transparent;
      overflow-y: auto;
      scroll-behavior: smooth;
+     margin: 0 auto;
  }
 
  .pc-lister {
