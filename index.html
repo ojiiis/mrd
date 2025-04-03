@@ -28,7 +28,6 @@
              <div onclick="close_search_chat()">Close</div>
           </div>
           <div style="height:calc(100% - 40px)" id="rs">
-            
           </div>
         </div>
         `;
@@ -47,11 +46,25 @@ async function searching_user(elem){
     const res = await req.json();
     if(res.status){
         let j = '';
-        for(let i = 0; i < res.length;i++){
-              j+= `<div class="search-peeps" style="padding:10px 20px">${res.data[i].fullname}</div>`;
+        for(let i = 0; i < res.data.length;i++){
+              j += `<div onclick="searchClick(this)" class="search-peeps" style="padding:10px 20px;display:flex;align-items:center" ut="${res.data[i].user_id}">
+                <div class="avi" style="background-image:url('https://lin.com.ng/mailin/media/${res.data[i].avi}');background-size:cover;background-position:center"></div> <span>${res.data[i].fullname}</span>
+                </div>`;
         }
         document.getElementById("rs").innerHTML = j;   
     }
+  }
+
+  async function searchClick(elem){
+    const req = await fetch("https://lin.com.ng/mailin/connect/"+elem.getAttribute("ut"),{
+      method:"POST",
+      headers:{
+        token:window.localStorage.getItem("token")
+      }
+    });
+   const res = await req.json();
+   if(document.getElementById(res.data.list_id))document.getElementById(res.data.list_id).remove();
+   document.body.insertAdjacentHTML("beforebegin",singlePlate(res.data));
   }
 
   function  signup(){

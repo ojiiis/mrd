@@ -126,7 +126,7 @@
      color: #303030;
  }
 
- .pc-lister .avi {
+ .pc-lister .avi, .search-peeps  .avi{
      width: 50px;
      height: 50px;
      border-radius: 50%;
